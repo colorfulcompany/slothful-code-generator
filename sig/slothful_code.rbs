@@ -1,0 +1,27 @@
+# -*- mode: ruby -*-
+
+type time_array = [Integer, Integer]
+type resource_record = { type_id: String?, time: time_array? }
+type date_record = { month: Integer, mon: Integer, day: Integer }
+
+class SlothfulCode
+  VERSION: String
+  HASHIDS_INCLUDE_CHARS: String
+  TYPE_CHARS: untyped
+
+  attr_reader resources: resource_record
+
+  def initialize: (?String) -> untyped
+
+  def generate: (type_id: String) -> String
+
+  def valid?: (String) -> bool
+
+  def decode: (String) -> resource_record
+
+  def now: () -> Time
+
+  def time_array: () -> time_array
+
+  def date: () -> (date_record | nil)
+end
